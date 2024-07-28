@@ -2,6 +2,7 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Portfolio_MVC.Data;
 
@@ -10,9 +11,11 @@ using Portfolio_MVC.Data;
 namespace Portfolio_MVC.Migrations
 {
     [DbContext(typeof(Portfolio_MVCContext))]
-    partial class Portfolio_MVCContextModelSnapshot : ModelSnapshot
+    [Migration("20240727201821_Department")]
+    partial class Department
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder

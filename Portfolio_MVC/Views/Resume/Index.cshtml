@@ -1,7 +1,81 @@
-﻿@{
+﻿@model IEnumerable<Portfolio_MVC.Models.PortfolioDetails>
+
+@{
     ViewData["Title"] = "Resume";
 }
-<h1>Resume</h1>
+<div class="row">
+    <h1>Resume</h1>
+</div>
 
-<p>Hello</p>
-<a href="Resume/Download" class="btn-primary btn">Download File</a>
+<div class="row gx-5">
+
+    <div class="col-sm-2">
+        <ul class="nav flex-column nav-tabs">
+            <li class="nav-item">
+                <a class="nav-link active" href="#">Education</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link active" href="#">Work Experience</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link active" href="#">Projects</a>
+            </li>
+
+        </ul>
+    </div>
+
+    <div class="col">
+        <p>My Resume</p>
+        <div class="ratio ratio-16x9">
+            <iframe class="embed-responsive-item w-100" src="Resume/GetResumePDF"></iframe>
+        </div>
+        @* <embed src="Resume/Download" max-width="80%" height="2000pxs" type="application/pdf" /> *@
+        @* <a href="Resume/Download" class="btn-primary btn">Download File</a> *@
+        
+        <button class="btn btn-primary" type="button" data-bs-toggle="collapse" data-bs-target="#CS_Coursework" aria-expanded="false" aria-controls="CS_Coursework">
+            CS button
+        </button>
+        <button class="btn btn-primary" type="button" data-bs-toggle="collapse" data-bs-target="#Physics_Coursework" aria-expanded="false" aria-controls="Physics_Coursework">
+            Physics button
+        </button>
+        <button class="btn btn-primary" type="button" data-bs-toggle="collapse" data-bs-target="#All_Coursework" aria-expanded="false" aria-controls="All_Coursework">
+            All button
+        </button>
+        <div class="row">
+            <div class="collapse" id="CS_Coursework">
+                <p>CS classes</p>
+            </div>
+            <div class="collapse" id="Physics_Coursework">
+                <p>Physics classes</p>
+            </div>
+            <div class="collapse" id="All_Coursework">
+                <p>All classes</p>
+            </div>
+            <div class="row">
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th>
+                                @Html.DisplayNameFor(model => model.Description)
+                            </th>
+                            <th></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var item in Model)
+                        {
+                            <tr> 
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.Description)
+                                </td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        
+    </div>
+
+</div>
+

@@ -36,4 +36,9 @@ app.MapControllerRoute(
     name: "default",
     pattern: "{controller=Home}/{action=Index}/{id?}");
 
+app.MapControllerRoute(
+    name: "resume",
+    pattern: "blog/{class_1?}/{class_2?}",
+    defaults: new { controller = "Resume", action = "Index" });
+
 app.Run();

@@ -14,10 +14,14 @@ html {
 }
 
 html {
-  position: relative;
-  min-height: 100%;
+    position: relative;
+    min-height: 100vh;
+
 }
 
 body {
-  margin-bottom: 60px;
+    
+    padding-top: 70px;
+    
+    margin-bottom: 80px;
 }

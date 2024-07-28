@@ -8,5 +8,6 @@ namespace Portfolio_MVC.Models
         public string? ClassName { get; set; }
         public string? ClassGrade { get; set; } 
         public string? Description { get; set; } 
+        public string? ClassDepartment {  get; set; }
     }
 }
